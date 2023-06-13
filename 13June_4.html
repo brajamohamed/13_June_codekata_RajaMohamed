@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      let n = 5;
+      let triangle = [];
+      function solve(num) {
+        for (let i = 0; i < num; i++) {
+          triangle[i] = [];
+          triangle[i][0] = 1;
+
+          for (let j = 1; j <= i; j++) {
+            triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+            console.log(triangle[i][j]);
+          }
+          triangle[i][i] = 1;
+        }
+        console.log("length:", triangle.length);
+        return triangle;
+      }
+      let result = solve(5);
+      for (let i = 0; i < n; i++) {
+        console.log(result[i]);
+      }
+    </script>
+  </body>
+</html>
